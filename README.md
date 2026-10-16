@@ -83,7 +83,7 @@ record types checked during phishing email analysis (SPF/DKIM/DMARC live in DNS)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Task 4 — List Listening Ports (netstat)
+## Task 4 - List Listening Ports (netstat)
 
 **Shows:** the "open doors" a machine is listening on, and its live connections.
 
@@ -156,7 +156,7 @@ sudo ufw status verbose
 ```
 ![ufw status](images/task6-ufw-status.png)
 
-**After — scan again (port 80 filtered):**
+**After - scan again (port 80 filtered):**
 ```bash
 nmap -e eth1 192.168.56.102
 ```
