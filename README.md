@@ -145,7 +145,7 @@ sudo python3 -m http.server 80   # leave running
 ```bash
 nmap -e eth1 192.168.56.102
 ```
-![nmap shows port 80 open](screenshots/task6-nmap-open.png)
+![nmap shows port 80 open](screenshots/task6-nmap-open.png.png)
 
 Apply the firewall on Ubuntu:
 ```bash
@@ -160,7 +160,7 @@ sudo ufw status verbose
 ```bash
 nmap -e eth1 192.168.56.102
 ```
-![nmap shows ports open](screenshots/task6-nmap-open.png.png)
+![nmap port 22 shows closed](screenshots/task6-nmap-filtered.png)
 
 What the before/after proves:
 
