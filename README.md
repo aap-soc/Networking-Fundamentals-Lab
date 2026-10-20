@@ -160,7 +160,7 @@ sudo ufw status verbose
 ```bash
 nmap -e eth1 192.168.56.102
 ```
-![nmap shows ports filtered](screenshots/task6-nmap-filtered.png)
+![nmap shows ports open](screenshots/task6-nmap-open.png.png)
 
 What the before/after proves:
 
