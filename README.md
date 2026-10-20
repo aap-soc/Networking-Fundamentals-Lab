@@ -40,7 +40,7 @@ Defender Firewall, `ufw`, Nmap.
 # Start a capture on the internet-facing interface, then:
 curl http://example.com
 # Stop the capture, then filter:
-# tcp.flags.syn==1
+# tcp.flags.syn==1 && tcp.flags.ack==0
 ```
 
 ![TCP three-way handshake in Wireshark](screenshots/task1-handshake.png)
@@ -51,7 +51,7 @@ any data moves.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Task 2 — Trace the Path (traceroute)
+## Task 2 - Trace the Path (traceroute)
 
 **Shows:** the chain of routers ("hops") a packet crosses to reach a destination.
 
@@ -119,7 +119,7 @@ ping -c 4 <windows-vm-ip>
 **Allowed - replies return:**
 ![ping replies when firewall allows ICMP](screenshots/task5-ping-allowed.png)
 
-**Blocked — request times out:**
+**Blocked - request times out:**
 ![ping times out when firewall blocks ICMP](screenshots/task5-ping-blocked.png)
 
 > Note: Windows Defender Firewall **blocks ping by default**, so the demonstration
@@ -154,7 +154,7 @@ sudo ufw allow 22/tcp
 sudo ufw deny 80/tcp
 sudo ufw status verbose
 ```
-![ufw status](images/task6-ufw-status.png)
+![ufw status](screenshots/task6-ufw-status.png)
 
 **After - scan again (port 80 filtered):**
 ```bash
@@ -165,7 +165,7 @@ nmap -e eth1 192.168.56.102
 What the before/after proves:
 
 - **Port 80 flipped `open` → `filtered`** - the firewall now silently drops it.
-- **Every port changed from `closed (reset)` → `filtered (no-response)`.** Without a
+- **Every port except 22 changed from `closed (reset)` → `filtered (no-response)`.** Without a
   firewall a closed port actively rejects with a RST; with `ufw` it drops packets
   silently. That shift is how an analyst spots a firewall in the path.
 - **Port 22 shows `closed`, not `filtered`** - it was explicitly *allowed* through,
